@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{num}}</div>
+        <div v-on:click='handle0'>
+            <button v-on:click='handle1'>点击1</button>
+        </div>
+        <div>
+            <a href="https://www.baidu.com" v-on:click="handle2">百度</a>
+        </div>
+
+    </div>
+    
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+        /*
+            事件绑定-事件修饰符
+
+            .stop阻止冒泡
+            <a v-on:click.stop="handle">跳转</a>
+            .prevent阻止默认行为
+            <a v-on:click.prevent="handle">跳转</a>
+        
+        */
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            methods: {
+                handle0: function () {
+                    this.num++;
+                },
+                handle1: function (event) {
+                    event.stopPropagation();
+                },
+                handle2: function(event){
+                    event.preventDefault();
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
