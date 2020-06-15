@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data数据</title>
+</head>
+
+<body>
+    <div id="app">
+        {{massage}}
+        <h1>{{school.name}}</h1>
+        <ul>
+            <li>{{address[0]}}</li>
+            <li>{{address[1]}}</li>
+            <li>{{address[2]}}</li>
+            <li>{{address[3]}}</li>
+        </ul>
+
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                massage: "你好",
+                school: {
+                    name:"张三",
+                    gender:"male",
+                    age:18
+
+                },
+                address:["北京","上海","广州","深圳"]
+
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>
