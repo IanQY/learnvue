@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on指令.html</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="点我" v-on:click="doIt">
+        <input type="button" value="点我" @click="doIt"><!--简写-->
+        <input type="button" value="双击" @dblclick="doIt">
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                massage: "你好"           
+                
+            },
+            methods: {
+                    doIt:function(){
+                        alert("你好");
+                    }
+                }
+
+        })
+    </script>
+
+</body>
+
+</html>

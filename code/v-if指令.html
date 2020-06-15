@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if指令.html</title>
+</head>
+
+<body>
+    <div id="app">   
+        <p v-if="true">一个p标签</p>    
+        <p v-if="isShow">一个p标签</p>    
+<!-- v-show 控制样式 v-if 控制dom树（对性能消耗大） -->
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                isShow: false
+            }           
+
+        })
+    </script>
+
+</body>
+
+</html>
