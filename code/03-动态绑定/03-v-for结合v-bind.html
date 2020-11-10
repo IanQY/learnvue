@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{            
+            color: #f00;
+        }
+        li:hover{
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(m,index) in movies" :class="this.index" @click="liClk">{{m}}</li>
+        </ul>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                movies:['第一项','第二项','第三项','第四项'],
+                isActive:false
+
+            },
+            methods:{
+                liClk:function(){
+                    if(this.index!=0){
+
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

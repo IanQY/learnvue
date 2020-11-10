@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <h2 :class="{active:isActive,line:isLine}">{{message}}</h2>
+        <button @click="btnClick">按钮</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                message:'你好',
+                active:'active',
+                isActive:'true',
+                isLine:'false'
+               
+            },
+            methods:{
+                btnClick:function(){
+                    this.isActive=!this.isActive
+                }
+            }
+        })
+    </script>
+</body>
+</html>
