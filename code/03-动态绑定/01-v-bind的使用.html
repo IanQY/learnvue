@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+        <a v-bind:href="aHref">
+            <img v-bind:src="imgURL" alt="">
+        </a>
+        <!--语法糖-->
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                massage:'你好',
+                imgURL:'https://img11.360buyimg.com/pop/s590x470_jfs/t1/129298/35/18334/96373/5faa30e6Ec5a12648/a28fcb0f1528129f.jpg.webp',
+                aHref:'http://www.baidu.com'
+            }
+        })
+    </script>
+</body>
+</html>
