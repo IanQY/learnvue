@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 1.单选框 -->
+    <!-- <label for="licence">
+      <input type="checkbox" id="licence" v-model="isAgree">同意协议
+    </label>    
+    <h2>{{isAgree|agreeOrNot}}</h2>
+    <button :disabled="!isAgree">下一步</button> -->
+
+    <!-- 2.多选框 -->
+
+    <input type="checkbox" value="唱" v-model="hobbies">唱
+    <input type="checkbox" value="跳" v-model="hobbies">跳
+    <input type="checkbox" value="RAP" v-model="hobbies">RAP
+    <input type="checkbox" value="篮球" v-model="hobbies">篮球
+
+    <h2>{{hobbies}}</h2>
+
+
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        massage: '你好',
+        isAgree: false,
+        hobbies: []
+
+      },
+      filters: {//过滤器
+        agreeOrNot: function (value) {
+          if (value) {
+            return '同意'
+          } else {
+            return '不同意'
+          }
+        }
+      }
+
+
+    })
+  </script>
+</body>
+
+</html>
