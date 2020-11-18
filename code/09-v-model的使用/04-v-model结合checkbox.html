@@ -23,8 +23,11 @@
     <input type="checkbox" value="RAP" v-model="hobbies">RAP
     <input type="checkbox" value="篮球" v-model="hobbies">篮球
 
-    <h2>{{hobbies}}</h2>
+    <h2>您的爱好是：{{hobbies}}</h2>
 
+<label v-for="item in originHobbies" :for="item">
+  <input type="checkbox" :value="item" :id="item" v-model="hobbies">{{item}}
+</label>
 
   </div>
   <script src="../js/vue.js"></script>
@@ -34,7 +37,8 @@
       data: {
         massage: '你好',
         isAgree: false,
-        hobbies: []
+        hobbies: [],
+        originHobbies:['唱','跳','RAP','篮球']
 
       },
       filters: {//过滤器
