@@ -10,11 +10,11 @@
 <body>
   <!-- 父组件模板 -->
   <div id="app">
-    <cpn :number1="num1" 
+    <cpn 
+    :number1="num1" 
     :number2="num2"
-    @num1Change="num1Change"
-    @num2Change="num2Change"
-    ></cpn>
+    @num1change="num1change"
+    @num2change="num2change"/>
   </div>
   <!-- 子组件模板 -->
   <template id="cpn">
@@ -42,11 +42,12 @@
         num2: 0
       },
       methods:{
-        num1Change(value){
-          this.num1 = value;
+        num1change(value){
+          parseInt()
+          this.num1 = parseFloat(value);
         },
-        num2Change(value){
-          this.num2 = value;
+        num2change(value){
+          this.num2 = parseFloat(value);
         }
       },
       components: {
@@ -65,19 +66,19 @@
           methods: {
             num1Input(event) {
               this.dnumber1 = event.target.value;
-              this.$emit('num1Change',this.dnumber1);
+              this.$emit('num1change',this.dnumber1);
 
-              //同时修改dnumber2的值
+              // 同时修改dnumber2的值
               this.dnumber2 = this.dnumber1*100;
-              this.$emit('num2Change',this.dnumber2)
+              this.$emit('num2change',this.dnumber2)
 
             },
             num2Input(event) {
               this.dnumber2 = event.target.value;
-              this.$emit('num2Change',this.dnumber2);
+              this.$emit('num2change',this.dnumber2);
 
               this.dnumber1 = this.dnumber2/100;
-              this.$emit('num1Change',this.dnumber1);
+              this.$emit('num1change',this.dnumber1);
             }
           }
         }
