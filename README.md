@@ -1,66 +1,99 @@
 # learnvue
+
 ## 学习笔记
 
-
 ### 块级作用域
-JavaScript中只有函数作用域和全局作用域
 
-ES6加入let声明变量，用法和var类似，不过let所声明的变量，只在let命令所在的代码块有效果
+JavaScript 中只有函数作用域和全局作用域
 
-### const的使用
+ES6 加入 let 声明变量，用法和 var 类似，不过 let 所声明的变量，只在 let 命令所在的代码块有效果
 
-ES6中优先使用const，需要改变标识符的时候才使用let
+### const 的使用
+
+ES6 中优先使用 const，需要改变标识符的时候才使用 let
 
 ### 父子组件的通信
 
-* 通过props向子组件传递数据
-    1. 字符串数组
-    2. 对象
-* 通过事件向父组件发送消息
+- 通过 props 向子组件传递数据
+  1. 字符串数组
+  2. 对象
+- 通过事件向父组件发送消息
 
 ### 计算属性
-* computed
+
+- computed
 
 ### 事件监听
-* @click
-### 条件判断
-* v-if/v-else-if/v-else
 
+- @click
+
+### 条件判断
+
+- v-if/v-else-if/v-else
 
 ## 高阶函数
+
 ### filter()/map()/reduce()
 
-* filter()用法
-> https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+- filter()用法
+  > https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
 ```javascript
 var newArray = arr.filter(callback(element[, index[, array]])[, thisArg])
 ```
 
-* map()用法
+- map()用法
+
 ```javascript
 var new_array = arr.map(function callback(currentValue[, index[, array]]) {
- // Return element for new_array 
+ // Return element for new_array
 }[, thisArg])
 ```
 
-* reduce()用法
-> https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+- reduce()用法
+  > https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
 ```javascript
 // 箭头函数
-reduce((previousValue, currentValue) => { /* ... */ } )
-reduce((previousValue, currentValue, currentIndex) => { /* ... */ } )
-reduce((previousValue, currentValue, currentIndex, array) => { /* ... */ } )
-reduce((previousValue, currentValue, currentIndex, array) => { /* ... */ }, initialValue)
+reduce((previousValue, currentValue) => {
+  /* ... */
+});
+reduce((previousValue, currentValue, currentIndex) => {
+  /* ... */
+});
+reduce((previousValue, currentValue, currentIndex, array) => {
+  /* ... */
+});
+reduce((previousValue, currentValue, currentIndex, array) => {
+  /* ... */
+}, initialValue);
 
 // 回调函数
-reduce(callbackFn)
-reduce(callbackFn, initialValue)
+reduce(callbackFn);
+reduce(callbackFn, initialValue);
 
 // 内联回调函数
-reduce(function(previousValue, currentValue) { /* ... */ })
-reduce(function(previousValue, currentValue, currentIndex) { /* ... */ })
-reduce(function(previousValue, currentValue, currentIndex, array) { /* ... */ })
-reduce(function(previousValue, currentValue, currentIndex, array) { /* ... */ }, initialValue)
+reduce(function (previousValue, currentValue) {
+  /* ... */
+});
+reduce(function (previousValue, currentValue, currentIndex) {
+  /* ... */
+});
+reduce(function (previousValue, currentValue, currentIndex, array) {
+  /* ... */
+});
+reduce(function (previousValue, currentValue, currentIndex, array) {
+  /* ... */
+}, initialValue);
 ```
 
+### 插槽
+
+### 具名插槽
+
+```html
+<button slot="center">案例</button>
+
+<slot name="center"><span>中间</span></slot>
+```
+### 编译作用域

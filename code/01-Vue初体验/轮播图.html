@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+</head>
+
+<body>
+    <div id="app">
+        <img style="width:500px ;" :src="imgArr[index]">
+        <br>
+        <a href="#" @click="prevImg">上一张</a>
+        <a href="#" @click="nextImg">下一张</a>
+
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="../js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                massage: "你好",
+                imgArr:["img/01.jpg","img/02.jpg","img/03.jpg","img/04.jpg","img/05.jpg","img/06.jpg","img/07.jpg","img/08.jpg","img/09.jpg","img/10.jpg"],
+                index:0                
+            },
+            methods: {
+              nextImg(){
+                if (this.index===this.imgArr.length-1) {
+                  this.index=0
+                  // console.log(this.index);
+                }else{
+                  this.index++
+                  // console.log(this.index);
+                }
+              },
+              prevImg(){
+                if (this.index===0) {
+                  this.index=this.imgArr.length-1
+                  // console.log(this.imgArr.length);
+                }else{
+                  this.index--
+                }
+                
+              }
+            },
+
+        })
+    </script>
+
+</body>
+
+</html>
