@@ -97,3 +97,27 @@ reduce(function (previousValue, currentValue, currentIndex, array) {
 <slot name="center"><span>中间</span></slot>
 ```
 ### 编译作用域
+
+
+### 模块化
+
+* CommonJs
+
+    解构赋值
+```javascript
+//CommonJs
+module.exports = {
+    flag,
+    sum
+}
+let {flag,sum} = require('./aaa.js')
+```
+* AMD
+* CMD
+* ES6的Moduels
+
+```javascript
+export {}
+import {} from './aaa.js'
+```
+
