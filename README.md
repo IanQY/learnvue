@@ -121,3 +121,8 @@ export {}
 import {} from './aaa.js'
 ```
 
+### webpack安装
+
+* 全局安装webpack `npm install webpack@3.6.0 -g`
+* 使用`webpack .\src\main.js .\dist\bundle.js`
+* 本地安装webpack`npm install webpack@3.6.0 --save-dev`
