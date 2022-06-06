@@ -31,11 +31,12 @@ ES6 中优先使用 const，需要改变标识符的时候才使用 let
 
 - v-if/v-else-if/v-else
 
-## 高阶函数
+### 高阶函数
 
-### filter()/map()/reduce()
+#### filter()/map()/reduce()
 
 - filter()用法
+  
   > https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
 ```javascript
@@ -51,6 +52,7 @@ var new_array = arr.map(function callback(currentValue[, index[, array]]) {
 ```
 
 - reduce()用法
+  
   > https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 
 ```javascript
@@ -126,3 +128,36 @@ import {} from './aaa.js'
 * 全局安装webpack `npm install webpack@3.6.0 -g`
 * 使用`webpack .\src\main.js .\dist\bundle.js`
 * 本地安装webpack`npm install webpack@3.6.0 --save-dev`
+
+### webpack的loader
+
+* 查看依赖版本 package.json
+
+
+ ```json
+  "peerDependencies": {
+      "webpack": "^3.0.0 || ^4.0.0"
+    }
+ ```
+
+
+
+* style-loader css-loader
+
+```json
+module:{
+    rules:[
+      {
+        test:/\.css$/,
+        use:['style-loader','css-loader']
+      }
+    ]
+  }
+```
+
+
+
+### webpack配置vue
+
+1. runtime-only
+2. runtime-compoiler
