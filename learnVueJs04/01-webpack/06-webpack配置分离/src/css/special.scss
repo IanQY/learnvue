@@ -1,0 +1,12 @@
+$highlight-color: #f90;
+$font-color:#fff;
+$font-size:50px;
+
+body{
+  font-size: $font-size;
+}
+nav {
+  width: 100px;
+  color: $font-color;
+  background: $highlight-color;
+}

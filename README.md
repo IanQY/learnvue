@@ -161,3 +161,20 @@ module:{
 
 1. runtime-only
 2. runtime-compoiler
+
+### webpack插件
+
+```javascript
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
+````
+
+
+
+### vue/cli脚手架
+
+* vuecli2初始化项目
+
+`vue init webpack my-project`
+
+e2e=>端到端测试=>selenium
