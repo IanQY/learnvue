@@ -173,8 +173,20 @@ const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
 
 ### vue/cli脚手架
 
-* vuecli2初始化项目
+- vuecli2初始化项目
 
 `vue init webpack my-project`
 
 e2e=>端到端测试=>selenium
+
+- runtime+compiler runtimeonly
+
+- runtime - compiler
+    - template -> ast -> render -> vdom -> UI
+- runtime-only (性能更高)
+    - render -> vdom -> UI
+    
+
+- vuecli3+初始化项目
+- 
+    `vue create my-project`
