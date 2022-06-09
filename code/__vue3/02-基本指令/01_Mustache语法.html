@@ -14,6 +14,10 @@
   <template id="my-app">
     <div>
       <h2>{{message}}</h2>
+      <h2>{{counter * 10}}</h2>
+      <h2>{{ message.split(' ').reverse().join(' ')}}</h2>
+      <h2>{{ isShow ?'哈哈哈':''}}</h2>
+      <button @click="toggle">切换</button></button></button>
     </div>
   </template>
 
@@ -23,7 +27,14 @@
       template: '#my-app',
       data() {
         return {
-          message: "Hello World"
+          message: "Hello World",
+          counter: 100,
+          isShow: true
+        }
+      },
+      methods: {
+        toggle(){
+          this.isShow = !this.isShow
         }
       }
     }
