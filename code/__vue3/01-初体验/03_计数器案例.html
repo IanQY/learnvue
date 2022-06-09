@@ -23,11 +23,22 @@
     <div>
       <h2>计数：{{num}}</h2>
       <button @click="addNum">+1</button>
-      <button @click="minNum">-1</button>
+      <button @click="minNum">-1</button>      
     </div>
   </template>
+  <button @click="btnClick" id="btn">按钮</button>
   <script src="../js/vue.js"></script>
   <script>
+    const btn1 = document.getElementById('btn')
+    btn1.addEventListener('click',()=>{
+      console.log(this);
+    })
+    function bar() {
+      console.log(this);
+    }
+    bar()
+    let a = "新this"
+    bar.bind(a)()
     Vue.createApp({
       template: '#tm',
       data() {
@@ -41,7 +52,8 @@
         },
         minNum() {
           this.num--
-        }
+        },
+        
       },
     }).mount('#app')
   </script>
